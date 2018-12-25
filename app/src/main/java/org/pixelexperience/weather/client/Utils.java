@@ -15,7 +15,7 @@ public class Utils {
         return networkInfo != null && networkInfo.isConnected();
     }
 
-    public static String getSystemProperty(String key, String defaultValue) {
+    /*public static String getSystemProperty(String key, String defaultValue) {
         String value;
 
         try {
@@ -53,5 +53,5 @@ public class Utils {
 
     public static String getSystemRevision() {
         return getSystemProperty("org.pixelexperience.weather.revision", "1");
-    }
+    }*/
 }

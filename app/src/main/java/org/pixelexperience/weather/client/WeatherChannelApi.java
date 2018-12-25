@@ -167,9 +167,9 @@ public class WeatherChannelApi implements OnFailureListener, OnCanceledListener 
                     throw new Exception("tempImperial or conditionIconElementClassName is empty");
                 }
                 String parsedConditions = parseCondition(conditionIconElement.className());
-                if (Utils.getSystemRevision().equals("1")) {
+                /*if (Utils.getSystemRevision().equals("1")) {
                     parsedConditions = parseConditionLegacy(parsedConditions);
-                }
+                }*/
                 int tempMetric = (int) Math.round((Integer.valueOf(tempImperial) - 32.0) * 5 / 9);
                 if (DEBUG)
                     Log.d(TAG, "tempImperial: " + tempImperial + " tempMetric: " + tempMetric + " parsedConditions: " + parsedConditions);
@@ -254,7 +254,7 @@ public class WeatherChannelApi implements OnFailureListener, OnCanceledListener 
         return sunCondition;
     }
 
-    private String parseConditionLegacy(String newCondition) {
+    /*private String parseConditionLegacy(String newCondition) {
         if (DEBUG) Log.d(TAG, "parseCondition: newCondition: " + newCondition);
         Map<String, String> conditions = new HashMap<>();
         conditions.put("partly-cloudy", "d,2");
@@ -283,7 +283,7 @@ public class WeatherChannelApi implements OnFailureListener, OnCanceledListener 
             }
         }
         return mSunCondition + ",0";
-    }
+    }*/
 
     @SuppressLint("MissingPermission")
     void queryLocation() {

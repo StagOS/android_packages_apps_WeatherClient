@@ -36,10 +36,10 @@ public class WeatherContentProvider extends ContentProvider {
             String[] selectionArgs,
             String sortOrder) {
 
-        if (!Utils.isBuildValid(getContext())) {
+        /*if (!Utils.isBuildValid(getContext())) {
             Log.e(TAG, "It seems that you're not using PixelExperience. Please update your sources or in case of cherry-picking our stuff, please revert this and build your own WeatherClient.");
             return null;
-        }
+        }*/
 
         if (DEBUG) Log.i(TAG, "query: " + uri.toString());
         WeatherChannelApi weatherChannelApi = new WeatherChannelApi(getContext());
